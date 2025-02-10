@@ -49,7 +49,7 @@
 
 
 
-import { initializeAgent } from './agent';
+import { initializeAgent } from './agent.ts';
 import { HumanMessage } from '@langchain/core/messages';
 
 const messages: HumanMessage[] = [];

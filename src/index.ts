@@ -1,6 +1,6 @@
 import express, { Request, Response } from "express";
 import cors from "cors";
-import { runChat } from "./interact";
+import { runChat } from "./interact.ts";
 
 
 const PORT = 8080;
