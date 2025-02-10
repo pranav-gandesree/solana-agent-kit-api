@@ -1,0 +1,24 @@
+{
+  "name": "agent",
+  "version": "1.0.0",
+  "description": "",
+  "main": "interact.ts",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@langchain/core": "^0.3.38",
+    "cors": "^2.8.5",
+    "express": "^4.21.2",
+    "solana-agent-kit": "^1.4.4"
+  },
+  "devDependencies": {
+    "ts-node": "^10.9.2",
+    "tsx": "^4.19.2",
+    "typescript": "^5.7.3"
+  }
+}
