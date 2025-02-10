@@ -90,7 +90,6 @@ export async function runChat(userMessage: string): Promise<string> {
   return agentText;
 }
 
-// runChat("check my wallet balance").catch(console.error);
 
 
 
