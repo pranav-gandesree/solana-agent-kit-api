@@ -2,7 +2,7 @@
   "name": "agent",
   "version": "1.0.0",
   "description": "",
-  "main": "interact.ts",
+  "main": "index.ts",
   "type": "module",
   "scripts": {
     "dev": "tsx src/index.ts",
@@ -13,21 +13,12 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@irys/sdk": "^0.2.11",
     "@langchain/core": "^0.3.38",
-    "@metaplex-foundation/js": "^0.20.1",
-    "@orca-so/common-sdk": "^0.6.9",
-    "@pythnetwork/hermes-client": "^1.3.1",
-    "@solana/addresses": "^2.0.0",
-    "@solana/rpc-types": "^2.0.0",
-    "@solana/web3.js": "^1.98.0",
     "cors": "^2.8.5",
     "express": "^4.21.2",
-    "node-fetch": "^3.3.2",
     "solana-agent-kit": "^1.4.4"
   },
   "devDependencies": {
-    "@types/async-retry": "^1.4.9",
     "@types/cors": "^2.8.17",
     "@types/debug": "^4.1.12",
     "@types/express": "^5.0.0",
