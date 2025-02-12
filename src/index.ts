@@ -1,6 +1,8 @@
 import express, { Request, Response } from "express";
 import cors from "cors";
-import { runChat } from "./interact.ts";
+import { runChat } from "./checkwalletbalance.ts";
+import { initializeAgent } from "./agent.ts";
+import { executeTransfers } from "./transfer.ts";
 
 
 const PORT = 8080;
@@ -39,6 +41,25 @@ app.post("/api/checkbalance", async (req: any, res: any) => {
   } catch (error) {
     console.error("Error in /api/checkbalance:", error);
     res.status(500).json({ error: "Internal Server Error" });
+  }
+});
+
+
+
+app.post("/api/transfersol", async (req: any, res: any) => {
+  try {
+    const { recipient, amount } = req.body; 
+
+    if (!recipient || !amount) {
+      return res.status(400).json({ error: "Recipient and amount are required" });
+    }
+
+    const { agent } = await initializeAgent();
+    const signature = await executeTransfers(agent, recipient, amount);
+
+    res.json({ success: true, txSignature: signature });
+  } catch (error: any) {
+    res.status(500).json({ error: "Failed to transfer SOL", details: error.message });
   }
 });
 
