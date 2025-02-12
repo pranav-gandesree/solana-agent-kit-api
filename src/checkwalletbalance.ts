@@ -32,7 +32,7 @@ export async function runChat(userMessage: string): Promise<string> {
     }
     
   } catch (error) {
-    console.error("❌ Error in runChat:", error);
+    console.error(" Error in runChat:", error);
   }
 
   return agentText;
