@@ -6,7 +6,7 @@ const messages: HumanMessage[] = [];
 
 const MAX_HISTORY = 2;
 
-export async function checkBalance(userMessage: string): Promise<string> {
+export async function runChat(userMessage: string): Promise<string> {
   let agentText = "";
 
   try {
@@ -26,10 +26,7 @@ export async function checkBalance(userMessage: string): Promise<string> {
       if ('agent' in chunk) {
         const message = chunk.agent.messages[0].content.trim();
         console.log(message);
-
-        if (message.includes("Your wallet balance is")) {
-          agentText = message;
-        }
+        agentText = message;
       }
     }
     

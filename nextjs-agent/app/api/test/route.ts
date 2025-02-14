@@ -1,4 +1,4 @@
-import { checkBalance } from "@/app/helpers/balance";
+import { runChat } from "@/app/helpers/balance";
 import { NextRequest, NextResponse } from "next/server";
 
 export async function POST(req: NextRequest) {
@@ -13,7 +13,7 @@ export async function POST(req: NextRequest) {
     }
 
     console.log('Processing message:', message);
-    const response = await checkBalance(message);
+    const response = await runChat(message);
     console.log('Response from checkBalance:', response);
 
     return NextResponse.json({ response });
